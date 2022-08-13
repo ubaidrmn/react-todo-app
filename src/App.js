@@ -26,11 +26,12 @@ function App() {
   function changeActiveStatus(task_id) {
     const input = document.getElementById(`task-${task_id}-input`)
     console.log(`task-${task_id}-title`)
-    let completed_tasks = 0
+    let completed_tasks = completedTasks
     if (input.checked) {
       completed_tasks += 1;
       document.getElementById(`task-${task_id}-title`).style.textDecoration = 'line-through';
     } else {
+      completed_tasks -= 1;
       document.getElementById(`task-${task_id}-title`).style.textDecoration = 'inherit';
     }
     setCompletedTasks(completed_tasks)
